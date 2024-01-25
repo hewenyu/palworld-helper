@@ -5,12 +5,12 @@ WORKDIR /app
 
 COPY . .
 
-RUN GOOS=linux go build -o palworld 
+RUN make
 
 FROM ubuntu:focal
 
 WORKDIR /app
 
-COPY --from=build /app/palworld /app/palworld
+COPY --from=build /app/build/monitor /app/monitor
 
 CMD ["/app/palworld"]
