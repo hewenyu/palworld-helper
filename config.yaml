@@ -1,7 +1,7 @@
 # RCON settings
 rcon_settings:
-  endpoint: 
-  password: 
+  endpoint: endpointHere
+  password: adminPasswordHere
 
 # interval for archiving backups, in seconds.
 archive_time_seconds: 3600
