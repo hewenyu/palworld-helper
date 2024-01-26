@@ -15,4 +15,6 @@ COPY --from=builder /app/build/monitor /app/monitor
 
 COPY endpoint.sh /app/endpoint.sh
 
+RUN chmod +x /app/endpoint.sh
+
 CMD ["/app/endpoint.sh"]
