@@ -16,7 +16,7 @@
 
 echo "Creating config file from env vars"
 echo "rcon_settings:" > /app/config.yaml
-echo "  endpoint: \"$ENDPOINT\"" >> /appconfig.yaml
+echo "  endpoint: \"$ENDPOINT\"" >> /app/config.yaml
 echo "  password: \"$PASSWORD\"" >> /app/config.yaml
 echo "archive_time_seconds: 3600" >> /app/config.yaml
 echo "interval: 5s" >> /app/config.yaml
