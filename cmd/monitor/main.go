@@ -105,9 +105,9 @@ func handleNewPlayer(player palrcon.Player, prev map[string]palrcon.Player) erro
 			slog.Error("Failed to broadcast", "error", err)
 		}
 		if userList.IsInWhiteList(player.SteamID) {
-			slog.Info("Player joined", "player", player)
+			slog.Info("Player joined", player.Name, player.SteamID)
 		} else {
-			slog.Info("The User is not in the white list", "User", player.Name)
+			slog.Info("The User is not in the white list", player.Name, player.SteamID)
 			if err := palRCON.KickPlayer(player.SteamID); err != nil {
 				slog.Error("Failed to kick player", "error", err)
 			}
