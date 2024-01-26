@@ -15,12 +15,12 @@
 # timeout: 1s
 
 echo "Creating config file from env vars"
-echo "rcon_settings:" > /etc/endpoint.yaml
-echo "  endpoint: \"$ENDPOINT\"" >> /etc/endpoint.yaml
-echo "  password: \"$PASSWORD\"" >> /etc/endpoint.yaml
-echo "archive_time_seconds: 3600" >> /etc/endpoint.yaml
-echo "interval: 5s" >> /etc/endpoint.yaml
-echo "timeout: 1s" >> /etc/endpoint.yaml
+echo "rcon_settings:" > /app/config.yaml
+echo "  endpoint: \"$ENDPOINT\"" >> /appconfig.yaml
+echo "  password: \"$PASSWORD\"" >> /app/config.yaml
+echo "archive_time_seconds: 3600" >> /app/config.yaml
+echo "interval: 5s" >> /app/config.yaml
+echo "timeout: 1s" >> /app/config.yaml
 
 # start the endpoint service
 echo "Starting endpoint service"
