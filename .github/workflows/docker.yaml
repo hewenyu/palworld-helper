@@ -1,19 +1,19 @@
 name: Docker Image CI
 
 # when: tag =~ ^v
-# on:
-#   push:
-#     tags:
-#       - "v*.*.*"
-
-# when: branch = master
 on:
   push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+    tags:
+      - "v*.*.*"
+
+# when: branch = master
+# on:
+#   push:
+#     branches:
+#       - master
+#   pull_request:
+#     branches:
+#       - master
 
 # jobs: build-container
 jobs:
@@ -41,9 +41,10 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: |
-              hewenyulucky/golang
+              hewenyulucky/palworld-helper
           tags: |
-              type=ref,event=branch
+              type=ref,event=tag
+              type=raw,value=latest
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
