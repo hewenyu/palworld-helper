@@ -15,6 +15,11 @@ COPY --from=builder /app/build/monitor /app/monitor
 
 COPY endpoint.sh /app/endpoint.sh
 
+
+RUN apt-get update && \
+    apt-get install -y icu-devtools && \
+    rm -rf /var/lib/apt/lists/*
+
 RUN chmod +x /app/endpoint.sh
 
 CMD ["/app/endpoint.sh"]
