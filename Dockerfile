@@ -1,16 +1,18 @@
-# 使用官方 Golang 镜像作为构建环境
 FROM golang:1.21-bullseye as builder
 
 WORKDIR /app
 
 COPY . .
 
+ENV GOPROXY=https://goproxy.cn,direct
 RUN make
 
 FROM ubuntu:focal
 
 WORKDIR /app
 
-COPY --from=build /app/build/monitor /app/monitor
+COPY --from=builder /app/build/monitor /app/monitor
 
-CMD ["/app/palworld"]
+COPY endpoint.sh /app/endpoint.sh
+
+CMD ["/app/endpoint.sh"]
