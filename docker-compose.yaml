@@ -1,0 +1,9 @@
+version: "3"
+services:
+   palhelper:
+      image: hewenyulucky/palworld-helper:v0.0.2
+      restart: unless-stopped
+      container_name: palhelper-service
+      environment:
+         - ENDPOINT="endpointHere"         
+         - PASSWORD="adminPasswordHere"

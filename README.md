@@ -29,3 +29,20 @@ timeout: 1s
 ## WhiteList
 
 auto create .txt file
+
+
+## docker-compose
+
+start
+
+```yaml
+version: "3"
+services:
+   palhelper:
+      image: hewenyulucky/palworld-helper:latest
+      restart: unless-stopped
+      container_name: palhelper-service
+      environment:
+         - ENDPOINT="endpointHere"         
+         - PASSWORD="adminPasswordHere"
+```
