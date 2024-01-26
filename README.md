@@ -46,3 +46,8 @@ services:
          - ENDPOINT="endpointHere"         
          - PASSWORD="adminPasswordHere"
 ```
+
+
+```bash
+sudo docker logs palhelper-service
+```
